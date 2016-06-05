@@ -37,9 +37,11 @@ def root(a,b,c, positive=True):
     # else:
     #     do something completely different
     if positive:
-        root = (-b + disc) / (2*a)
+        root = -b + disc
     else:
-        root = (-b - disc) / (2*a)
+        root = -b - disc
+
+    root /= 2*a
     # This tells python to return the root1 value when the positive_root function is called
     return root
 

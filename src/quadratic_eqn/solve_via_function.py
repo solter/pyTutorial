@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+This module solves a quadratic equation using
+a series of functions
+"""
+
 import numpy as np
 
 a = 2.1
@@ -18,11 +23,15 @@ c = 1.2
 # are no longer defined outside of the function.
 # This is called the 'scope' of the variable.
 # In python, the scope of a variable is everything at the same or
-# deeper indentation level as where the variable is defined. Once
+# deeper indentation level as where the variable is defined*. Once
 # a variable is out of scope, it no longer exists.
 # If the same variable name is used in multiple scopes, the
 # variable with the least scope (defined at the largest indent level) is
 # the one used.
+#
+# * this holds for functions and classes, but not if statements.
+#   see https://docs.python.org/3/tutorial/classes.html for the full
+#   set of scope rules
 def positive_root(a,b,c):
     """
     This is a function docstring. It should immediatly follow
