@@ -36,7 +36,7 @@ root1 = (-b + disc) / (2*a)
 # For the second root, define it in 2 parts.
 # First define the numerator
 root2 = -b - disc
-# Then divide the variable by the denominator
+# Then divide the variable by the denominator using an augmented assignment statement
 root2 /= 2*a # equivalent to root2 = root2/(2*a)
 
 quad_at_root1 = a * root1**2 + b * root1 + c
