@@ -154,6 +154,14 @@ interface to the shell. Google "bash shell" for a description of the standard sh
 ```
 
 ### Roots of a quadratic equation
+This is a series of examples which should illustrate the following:
+* Basic python syntax
+* python functions
+* python classes
+* python modules
+* print statements
+* python Exceptions and handling them
+
 For this series of examples, navigate into the src/quadratic_eqn directory.
 
 Execute simple_script.py.
@@ -218,10 +226,60 @@ via the following commands:
 The print statement indicates we successfully changed q1.
 But the root statement throws an exception because the roots are imaginary.
 
-Open up the quad_class.py file and examine the source code that made all this
+Now open up the quad_class.py file and examine the source code that made all this
 happen. Note that when it was imported, it was not the main program,
 so the last section did NOT execute.
 You should now have a *basic* grasp on the following:
 * classes [[python classes](https://docs.python.org/3/tutorial/classes.html)]
 * defining your own Exceptions [[user-defined exceptions](https://docs.python.org/3/tutorial/errors.html#user-defined-exceptions)]
 * magic methods within classes [[python magic methods](http://www.rafekettler.com/magicmethods.html)]
+
+If you were accessing this within another module, you probably don't want
+your program to fail when an exception is raised. Python provides the following construct
+for this:
+```Python
+# Do some stuff
+...
+
+try:
+    # What you want to do
+    ...
+except QuadException as qe:
+    # What you want to do when this error is thrown
+    # Will ONLY catch QuadException types of exceptions,
+    # and store the exception as qe
+    print(qe)
+    ...
+
+# Do more stuff
+...
+```
+It is possible to catch all exceptions by specifying `except` or `except Exception as e`,
+but this is bad practice. For a more in-depth treatment of exceptions and 
+exception handling see [python exceptions](https://docs.python.org/3/tutorial/errors.html).
+
+### Loops and Data Structures
+This section should introduce you to the following:
+* Loops 
+   * for loops (looping through a list)
+   * while loops (looping until a condition is met)
+* Basic python data structures
+   * Tuples
+   * Lists
+      * List Slicing
+      * List Comprehensions
+   * Dictionaries
+   * NumPy arrays
+* Reading and Writing to files
+   * Using basic python IO functions
+   * Using standard file types json and pickles
+
+### Bisection root-finding method
+This example should introduce you to the following:
+* Bisection method
+* Matplotlib
+   * Plotting basic data
+   * Labeling your plots
+   * Matplotlib axes objects
+   * Plotting lines
+
