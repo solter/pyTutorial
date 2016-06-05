@@ -158,10 +158,70 @@ For this series of examples, navigate into the src/quadratic_eqn directory.
 
 Execute simple_script.py.
 Open up the source file and make sure you understand it.
-You should have a grasp on the following (links to extensive python documentation provided to the right)
+You should have a basic grasp on the following (links to extensive python documentation provided to the right)
 * importing external packages [[python modules](https://docs.python.org/3/tutorial/modules.html)]
 * defining variables using `=` 
 * updating variables using `/=` [[python statements](https://docs.python.org/3/reference/simple_stmts.html)]
 * arithmetic expressions `+,-,*,/,**`
 * print statements [[python format statements](https://docs.python.org/3/library/string.html#formatstrings), [python print](https://docs.python.org/3.4/library/functions.html#print)]
 
+Now execute the solve_via_function.py script.
+The output should be identical as before.
+Open up the source file and make sure you understand it.
+You should have a *basic* grasp on the following:
+* functions [[python functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)]
+* scope [[formal scope rules](https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces)]
+
+Now execute the single_root_function.py script
+The output should be identical as before.
+Open up the source file and make sure you understand it.
+You should have a basic grasp on the following:
+* optional variables within python functions
+* if...elif...else statements
+
+To understand the quad_class.py module, we are going to explore it
+through the interpreter.
+Open up the interpreter and enter the following command:
+```Python
+>>> import quad_class as qc
+```
+This imports the module quad_class (note that this is the filename without the .py extension),
+and names it qc for future use.
+Try reading the docstrings for the module and quadrateic_Equation class by using the built in
+help command:
+```Python
+>>> help(qc)
+>>> help(qc.quadratic_Equation)
+```
+The help function pulls up the docstring, as well as the method signature.
+This is one reason why docstrings should be included with ALL modules, functions and classes.
+
+We can solve the quadratic equation via the following commands:
+```Python
+>>> q1 = qc.quadratic_Equation(2.1, 5.4, 1.2)
+>>> print(q1)
+>>> root1 = q1.root()
+>>> root2 = q1.root(False)
+>>> print('q1 at root1 = q1({:.2f}) is {:f}'.format(root1, q1(root1)))
+>>> print('q1 at root2 = q1({:.2f}) is {:f}'.format(root2, q1(root1)))
+```
+The first line defines a new quadratic equation, and the first print statement
+prints the q1 function (by internally calling the q1.__str__ function).
+
+We can modify our quadratic equation. Try changing b to .01 and finding a root
+via the following commands:
+```Python
+>>> q1.b = .02
+>>> print(q1)
+>>> root1 = q1.root()
+```
+The print statement indicates we successfully changed q1.
+But the root statement throws an exception because the roots are imaginary.
+
+Open up the quad_class.py file and examine the source code that made all this
+happen. Note that when it was imported, it was not the main program,
+so the last section did NOT execute.
+You should now have a *basic* grasp on the following:
+* classes [[python classes](https://docs.python.org/3/tutorial/classes.html)]
+* defining your own Exceptions [[user-defined exceptions](https://docs.python.org/3/tutorial/errors.html#user-defined-exceptions)]
+* magic methods within classes [[python magic methods](http://www.rafekettler.com/magicmethods.html)]
