@@ -94,7 +94,7 @@ Some quick notes:
 #### Python modules
 A python module is just a text file containing python commands.
 The convention is that python files use the extension .py.
-Copy the following code into a file name test.py:
+Copy the following code into a file name myFirstProg.py:
 ```Python
 #!/usr/bin/env python3
 
@@ -127,7 +127,8 @@ $ ./test.py
 ```
 NOTE: The first line in the file,
 #!/usr/bin/env python3
-is a special type of comment for the first line. It is called a shebang, and the terminal 
+is a special type of comment that must go before any code (but can be after comments). 
+Lines beginning with `#!` are called a shebang, and the terminal 
 you are in reads this and knows to launch this file as a python3 script.
 (technically your shell is doing the heavy lifting. The terminal is just the screen
 interface to the shell. Google "bash shell" for a description of the standard shell) 
