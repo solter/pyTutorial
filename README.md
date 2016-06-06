@@ -384,7 +384,23 @@ Here is some sample dictionary creation and access
 ```
 Keys can be anything immutable, including numbers, strings and tuples.
 
-#### Loops
+#### Control Flow Statements
+See the loops.py file for a more comprehensive description of Ifs and Loops.
+
+##### If
+
+```Python
+cond1 = True
+cond2 = False
+cond3 = True
+if (cond1 and cond2) or cond3:
+   print('the if block was true')
+```
+indicates that if both cond1 and cond2 are true or if cond3 is true then print('the if block was true').
+
+The `if` statement has associated keywords `elif` (think else if) and `else` 
+
+##### Loops
 
 #### Numpy arrays
 
