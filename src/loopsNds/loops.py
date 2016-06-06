@@ -3,7 +3,7 @@
 """
 This script is intended to demonstrate how python handles loops and
 complex if statements.
-The 2 (+1) loop types are:
+The loop types are:
     for loops
     while loops
     list comprehensions
@@ -48,6 +48,8 @@ if not a and b: # if (not a) is true and b is true = if a is false and b is true
 if (a and (b or c or d)): # if a is true and (at least one of b, c, d is true)
     print('a and something else is true')
 
+# NOTE: c = d assigns the value of d to c
+# c == d returns a boolean indicating whether c and d are the same
 if c == d: # if c equals d
     print('c equals d')
 
@@ -61,14 +63,26 @@ else:
     print('a is false')
 
 # We can also check multiple states, and chain them indefinitely
+# elif and else statements ONLY exist to ammend if statements
 if a and b and c and d: # if they are all true
     print('everything is true')
 elif c: # if the above condition is not met, and c is true
     print('c is true')
-elif b: # if the above condition is not met, and b is true
+elif b: # if the above conditions are not met, and b is true
     print('b is true')
 else: # if none of the above conditions are met
     print('the above conditions all failed')
+    
+# NOTE: The 3 if statents below are COMPLETELY DIFFERENT
+# from the if elif block above
+if a and b and c and d: # if they are all true
+    print('everything is true')
+if c: # if c is true - DOES NOT DEPEND ON ABOVE CONDITION
+    print('c is true')
+if b: # if b is true - DOES NOT DEPEND ON ABOVE CONDITIONS
+    print('b is true')
+else: # this triggers if b is false
+    print('b is false')
 
 # For numbers (and anything properly defined, see documentation) we can
 # use the <, >, <=, and >= comparisons
@@ -98,7 +112,7 @@ print('while loop')
 i = 1
 print(i)
 while (i < 10):
-    # comments are allowed in loops
+    # comments are allowed in indentation blocks
 
     # as are empty lines
     i *= 2
