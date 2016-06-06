@@ -310,7 +310,7 @@ the guide. The following table describes the content and lists references for ea
 | fileIO        | file input/output                 | [[io tutorial](https://docs.python.org/3/tutorial/inputoutput.html), [numpy genfromtxt](http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html)]
 
 #### Tuples and Lists
-See the tuplesNlists.py file for a more comprehensive description of Tuples and Lists.
+See the tuplesNlists.py file for a more comprehensive description of tuples and lists.
 
 ##### Tuples
 Tuples are a series of data which cannot be modified after creation.
