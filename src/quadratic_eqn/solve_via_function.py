@@ -12,6 +12,7 @@ c = 1.2
 
 # Following is a function.
 # Functions take inputs, and produce output(s).
+# The outputs are specified at the end with a return statement (this encompasses returning no variables as well).
 # They are defined using the following syntax:
 # def your_function_name(name_of_input_1, name_of_input_2, ...):
 #
