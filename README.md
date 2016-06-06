@@ -1,5 +1,5 @@
 # pyTutorial
-Python tutorial for incoming summer students at UT:ARL 2016
+Python tutorial for incoming summer students at ARL:UT 2016
 
 ## Basic command line navigation
 This is intended for a unix environment (MacOS, Linux).
@@ -15,10 +15,12 @@ configurable.
 
 Try running the following commands (use 'q' to exit the windows brought up by less and man):
 ```Shell
+$ pwd
 $ ls
 $ mkdir my_new_directory
 $ ls
 $ cd my_new_directory
+$ pwd
 $ echo 'Hello world' > test.txt
 $ cp test.txt test2.txt
 $ less test.txt
@@ -28,17 +30,21 @@ $ man ssh
 ```
 This series of commands should have done the following:
 
-1. list the files and subdirectories in your current directory (this will probably be your home)
-2. makes a new directory named 'my_new_directory'
-3. Same as 1, but should now include a new directory
-4. moves you into the directory 'my_new_directory'
-5. echo prints 'Hello world' to the screen, but the `> test.txt` dumps the output into the file test.txt
-6. copies the test.txt file to a new file called test2.txt
-7. less opens the file to view. It is a minimal viewing program that does NOT allow editing of the file.
-   Navigate with the arrow keys. Exit by pressing 'q'
-8. opens the test2.txt file. Should be identical to the test.txt file opened in 7
-9. man opens up the manual page for the command. This line opens up the manual command for man itself
-10. the man page for ssh. This is how you can move to using a different machine
+1. print the present working directory (`pwd` - where you are in the file system) to the screen.
+2. list (`ls`) the files and subdirectories in your current directory (this will probably be your home)
+3. makes a new directory (`mkdir`) named 'my_new_directory'
+4. Same as 2, but should now include a new directory
+5. change the working directory (`cd`) 'my_new_directory'
+6. Same as 1. Note that it should now have appended the my_new_directory you just changed into
+7. prints (`echo`) 'Hello world' to the screen, but the `> test.txt` dumps the output into the file test.txt
+8. copies (`cp`) the test.txt file to a new file called test2.txt
+9. opens the file to view (`less`). It is a minimal viewing program that does NOT allow editing of the file.
+   Navigate with the arrow keys. Quit/exit by pressing 'q'
+10. opens the test2.txt file. Should be identical to the test.txt file opened in 7
+11. opens up the manual page (`man`) for the command. This line opens up the manual command for man itself
+12. the man page for `ssh`. This is how you can move to using a different machine
+
+Here's a [cheat sheet](https://ubuntudanmark.dk/filer/fwunixref.pdf) for some common linux commands.
 
 ## Python
 For this demo we will be using python.
@@ -47,7 +53,7 @@ overhead behind the scenes (memory management, complex data structures),
 and there exist a LOT of packages out there to make the base language more powerful.
 For a very in-depth tutorial, see the [official python tutorial](https://docs.python.org/3/tutorial/).
 
-We will be focusing on python3, and the packages NumPy and MatplotLib.
+We will be focusing on python3, and the packages NumPy and Matplotlib.
 There is also an older version python2 still commonly used, but the syntax
 is very similar.
 
@@ -80,7 +86,7 @@ To edit python files, here are some common programs:
 #### Interactive console
 Similar to how bash commands were preceded by a `$`, in the interactive console
 in python precedes each command with a `>>>`.
-To launch the interactive console, open a terminal and launch 'python3'.
+To launch the interactive console, open a terminal and run 'python3'.
 Try running the following commands:
 ```Python
 >>> print('Hello World')
@@ -132,13 +138,15 @@ $ python3 test.py
 This does the same thing the interactive console does, except does NOT print a.
 All print statements will write their output to the screen.
 
-You can also run this directly from the terminal without calling python.
-But first you have to tell your machine that it is safe to execute this file.
-To enable execution, use the command (look it up via `$ man chmod`)
+> NOTE:
+> You can also run this directly from the terminal without calling python,
+> But first you have to tell your machine that it is safe to execute this file.
+> To enable execution, use the command (look it up via `$ man chmod`):
 ```Shell
 $ chmod +x test.py
 ```
-Then execute the file using
+> (This only needs to happen once. Afterwards the machine knows it can execute the file.)
+> Then execute the file using
 ```Shell
 $ ./test.py
 ```
@@ -327,13 +335,13 @@ generates a new file (bisection.png). This should match the
 old_output.png file.
 
 It is not exactly a basic plot, but should show you some of the power
-and finickyness of matplotlib.
+and finickyness of Matplotlib.
 
 Here are some references:
 [lambda expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
-[matplotlib plotting functions](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
-[matplotlib gridspec](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
-[matplotlib backends](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend )
+[Matplotlib plotting functions](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+[Matplotlib gridspec](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+[Matplotlib backends](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend )
 
 ## One last thing
 When coding in python, it is easy to just buckle down and create a workable script.
@@ -366,16 +374,16 @@ It has a maximum score of 10, but no lower limit. It also should act as a guide,
 its suggestions don't make sense - but usually its a good place to start improving your code.
 
 ## End of Tutorial
-This concludes the UT:ARL python tutorial.
+This concludes the ARL:UT python tutorial.
 There are many references above, but here are the three that I find most useful:
 [official python tutorial](https://docs.python.org/3/tutorial/)
 [numpy documentation](http://docs.scipy.org/doc/numpy/)
-[matplotlib plotting api](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+[Matplotlib plotting api](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
 And of course, [Google](https://www.google.com/).
 
 I also want to point out one more useful website when you have questions:
 [Stack Exchange](http://stackexchange.com/)
-Typically this is where google ends up directing you (unless its matplotlib,
+Typically this is where google ends up directing you (unless it's Matplotlib,
 then google as often as not points you to some wierd documentation page).
 
 If you have any questions, start with the above documentation and google.
