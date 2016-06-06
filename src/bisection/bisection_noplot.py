@@ -66,7 +66,7 @@ def intersect(f, g, x0, tol=.001, plot=False):
         step_size *= 1.2
 
     # We now know that our bounds lie on opposite sides of 0,
-    # so we can shrink our bounds, garunteeing that they remain
+    # so we can shrink our bounds, guaranteeing that they remain
     # on opposite sides of the intersection. Thus our terminating condition
     # is when bnd[1] - bnd[0] < tol, since this implies that the
     # equal point lies in between bnd[0] and bnd[1] which has less
@@ -92,7 +92,7 @@ def intersect(f, g, x0, tol=.001, plot=False):
             bnd[1] = test_bnd
 
     # At this point, we know that bnd[1] and bnd[0] lie on opposite sides of the intersection
-    # and bnd[1] - bnd[0] < tol, so the corerect answer is garunteed to fall within .5*tol of
+    # and bnd[1] - bnd[0] < tol, so the corerect answer is guaranteed to fall within .5*tol of
     # .5*(bnd[1] + bnd[0])
     return .5*sum(bnd)
 
