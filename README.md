@@ -272,10 +272,9 @@ This section should introduce you to the following:
    * Using standard file types json and pickles
    * Using NumPy text reader
 
-For this set of topics, please refer to the files
-inside src/loopsNds/.
-These files are intended to be walked through line by line
-in an interpreter - with the comments as a guide. Follow the order of the table below:
+For this set of topics, please refer to the files inside src/loopsNds/.
+These files are extended versions of the information below, with comments providing
+the guide. The following table describes the content and lists references for each file/topic:
 
 | file          | content                           | references |
 | ---           | ---                               | ---        |
@@ -284,6 +283,17 @@ in an interpreter - with the comments as a guide. Follow the order of the table 
 | loops         | control structures (ifs and loops)| [[control flow](https://docs.python.org/3/tutorial/controlflow.html), [boolean expr](https://docs.python.org/3/reference/expressions.html#bComparisons), [data structures](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)] |
 | numpy_arr     | numpy arrays                      | [Numpy documentation](http://docs.scipy.org/doc/numpy/), start with the User Guide's quickstart |
 | fileIO        | file input/output                 | [[io tutorial](https://docs.python.org/3/tutorial/inputoutput.html), [numpy genfromtxt](http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html)]
+
+#### Tuples and Lists
+
+#### Dictionaries
+
+#### Loops
+
+#### Numpy arrays
+
+#### File Input/Output
+
 
 ### Bisection root-finding method
 This example should introduce you to the following:
@@ -298,7 +308,7 @@ For this section, navigate to the src/bisection/ directory.
 You will see 2 python files, both which you can run.
 
 The bisection_noplot.py file is the basic bisection algorithm.
-Open it up, and see if you cna figure out how it works.
+Open it up, and see if you can figure out how it works.
 The big new things are the introduction of lambda functions, and passing functions to a function.
 The function passing behaves just like passing any other object (functions are objects in python).
 Lambda functions are another way of defining functions which only take 1 line and return.
