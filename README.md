@@ -39,7 +39,7 @@ This series of commands should have done the following:
 7. prints (`echo`) 'Hello world' to the screen, but the `> test.txt` dumps the output into the file test.txt
 8. copies (`cp`) the test.txt file to a new file called test2.txt
 9. opens the file to view (`less`). It is a minimal viewing program that does NOT allow editing of the file.
-   Navigate with the arrow keys. Quit/exit by pressing 'q'
+   Navigate with the arrow keys. Quit/exit by pressing \'q\'
 10. opens the test2.txt file. Should be identical to the test.txt file opened in 7
 11. opens up the manual page (`man`) for the command. This line opens up the manual command for man itself
 12. the man page for `ssh`. This is how you can move to using a different machine
