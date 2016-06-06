@@ -8,9 +8,8 @@ These type of comments are commonly used for documentation (docstrings).
 
 You should include 1 docstring at the top of all python modules describing what
 the module does.
-"""
 
-"""
+here is the docstring for this file:
 This module defines the coeffecients to the quadratic equation,
 variables that find the roots of the equation, and displays the results.
 """
@@ -47,6 +46,7 @@ print("{:f} * x^2 + {:f} x + {:f}".format(a,b,c))
 print("  = {:.2f} * x^2 + {:.2f} x + {:.2f}".format(a,b,c))# only printing 2 places after the decimal
 print()
 print("The positive root is {:f}".format(root1))
+# The \n tells python to jump to the next line.
 print("subsituting the positive root into the equation gives:\n  {:f}".format(quad_at_root1))
 print()
 print("The negative root is {:f}".format(root2))
