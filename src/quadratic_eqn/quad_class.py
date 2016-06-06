@@ -21,10 +21,12 @@ class quadratic_Equation:
     """
 
     # Methods inside classes can come in 2 flavors,
-    # regulare methods and magic methods. Magic methods
+    # regular methods and magic methods. Magic methods
     # begin with a dunder (double underscore, __).
-    # For a good guide to the magic methods and what they
-    # do, see http://www.rafekettler.com/magicmethods.html
+    # For a good guide to the magic methods and a description
+    # of defined magic methods, see http://www.rafekettler.com/magicmethods.html.
+    # Magic methods are not invoked directly, but instead python uses them
+    # when appropriate.
     #
     # This first argument to all functions is the class itself,
     # convention is to name this variable 'self'
@@ -107,11 +109,12 @@ class quadratic_Equation:
                 self.a, self.b, self.c)
         return toret
 
-# The following shows how to define a class
-# which is a subclass of the built in exception class.
-# A subclass contains all the methods of Exception,
-# and anywhere an Exception is needed QuadException will
-# suffice
+# This is a user-defined Exception.
+# It is a subclass of an Exception - which is a built
+# in type of object.
+# A subclass contains all the methods of its superclass,
+# and since QuadException is a subclass of Exception,
+# anywhere an Exception is needed QuadException will suffice
 #
 # See https://docs.python.org/3/tutorial/errors.html for a
 # complete understanding of how exceptions and exception handling works.
@@ -135,7 +138,9 @@ if __name__ == '__main__':
     print()
 
     # The following 2 statements do the same thing
+    # Use evaluate directly
     quad_at_root1 = q1.evaluate(q1.root())
+    # This is implicitly calling into the __call__ method
     quad_at_root1 = q1(q1.root())
 
     quad_at_root2 = q1(q1.root(False))
