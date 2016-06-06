@@ -369,6 +369,6 @@ I also want to point out one more useful website when you have questions:
 Typically this is where google ends up directing you (unless its matplotlib,
 then google as often as not points you to some wierd documentation page).
 
-There are many more packages for python which are useful, but those mentioned
-above will likely cover most of your use cases.
-
+If you have any questions, start with the above documentation and google.
+If those don't suffice within about half an hour, contact your supervisor.
+I am also usually available, so feel free to stop by to see if I'm in.
