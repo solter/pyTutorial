@@ -3,6 +3,10 @@
 """
 This script should show some of the power
 of numpy arrays, and demonstrate their usage.
+
+See the numpy documentation for more information
+http://docs.scipy.org/doc/numpy/
+start with the User Guide's quickstart
 """
 
 import numpy as np

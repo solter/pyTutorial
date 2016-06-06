@@ -59,19 +59,19 @@ If you are not there for the live demo, the source files exist
 inside the src/ directory which you can execute on your own machine.
 
 To edit python files, here are some common programs:
-* Any text editor - usually simple, but miss a bunch of useful features (like jump to method...)
-* XCode(MacOS) - a text editor with syntax highlighting
-* vim - a command line text editor - available with (nearly) all UNIX installs. Very configurable, but has a bit of a learning curve.
+* *Any text editor* - usually simple, but miss a bunch of useful features (like jump to method...)
+* *XCode*(MacOS) - a text editor with syntax highlighting
+* *vim* - a command line text editor, available with (nearly) all UNIX installs. Very configurable, but has a bit of a learning curve.
         See [vim python setup](https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/) for one way to configure vim. 
         This is also my favorite, so feel free to ask me for help configuring it.
         It can replace 80+% of the functionality an IDE provides, with sufficient configuration.
         A tutorial comes built in to most unix machines, just launch the `vimtutor`
-* emacs - a text editor. vim and emacs aficionados enjoy arguing which one is best.
+* *emacs* - a text editor. vim and emacs aficionados enjoy arguing which one is best.
           See [emacs python setup](https://realpython.com/blog/python/emacs-the-best-python-editor/) for an example configuration.
-* Sublime - this is a text editor with a free trial, but will eventually ask you to buy it (ask your supervisor if you want a copy).
+* *Sublime* - this is a text editor with a free trial, but will eventually ask you to buy it (ask your supervisor if you want a copy).
             I've heard good things - but never used it myself.
             See [sublime python setup](https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/) for configuration.
-* eclipse - a full IDE (integrated design environment), originally designed for java. This is open source (thus free), and contains
+* *eclipse* - a full IDE (integrated design environment), originally designed for java. This is open source (thus free), and contains
             a lot of features to make development easy. There exists a python plugin called pyDev (as well as plugins for many other
             languages). See [python eclipse usage](https://www.ics.uci.edu/~pattis/common/handouts/introtopythonineclipse/), or ask your
             supervisor for help setting it up.
@@ -155,10 +155,9 @@ interface to the shell. Google "bash shell" for a description of the standard sh
 
 ### Roots of a quadratic equation
 This is a series of examples which should illustrate the following:
-* Basic python syntax
+* Basic python syntax [[full python tutorial](https://docs.python.org/3/tutorial/index.html)]
 * python functions
 * python classes
-* python modules
 * print statements
 * python Exceptions and handling them
 
@@ -260,24 +259,36 @@ exception handling see [python exceptions](https://docs.python.org/3/tutorial/er
 
 ### Loops and Data Structures
 This section should introduce you to the following:
-* Loops 
+* Basic python data structures
+   * Tuples and Lists
+   * Dictionaries
+   * NumPy arrays [[Numpy documentation](http://docs.scipy.org/doc/numpy/), start with the User Guide's quickstart]
+* Control flow
+   * if statements and boolean expressions
    * for loops (looping through a list)
    * while loops (looping until a condition is met)
-* Basic python data structures
-   * Tuples
-   * Lists
-      * List Slicing
-      * List Comprehensions
-   * Dictionaries
-   * NumPy arrays
 * Reading and Writing to files
    * Using basic python IO functions
    * Using standard file types json and pickles
+   * Using NumPy text reader
+
+For this set of topics, please refer to the files
+inside src/loopsNds/.
+These files are intended to be walked through line by line
+in an interpreter - with the comments as a guide. Follow the order of the table below:
+
+| file          | content                           | references |
+| ---           | ---                               | ---        |
+| tuplesNlists  | tuples and lists                  | [standard types](https://docs.python.org/3.4/library/stdtypes.html)|
+| dictionaries  | dictionaries                      | [standard types](https://docs.python.org/3.4/library/stdtypes.html)|
+| loops         | control structures (ifs and loops)| [[control flow](https://docs.python.org/3/tutorial/controlflow.html), [boolean expr](https://docs.python.org/3/reference/expressions.html#bComparisons), [data structures](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)] |
+| numpy_arr     | numpy arrays                      | [Numpy documentation](http://docs.scipy.org/doc/numpy/), start with the User Guide's quickstart |
+| fileIO        | file input/output                 | [[io tutorial](https://docs.python.org/3/tutorial/inputoutput.html), [numpy genfromtxt](http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html)]
 
 ### Bisection root-finding method
 This example should introduce you to the following:
 * Bisection method
-* Matplotlib
+* Matplotlib [[Matplotlib api](http://matplotlib.org/1.4.3/api/index.html), [Matplotlib command summary](http://matplotlib.org/1.4.3/api/pyplot_summary.html)]
    * Plotting basic data
    * Labeling your plots
    * Matplotlib axes objects
