@@ -16,8 +16,8 @@ import numpy as np
 # Numpy arrays are defined with an initial size, which cannot
 # change without redefining the array. Furthermore, all elements
 # of an array are of the same type, and must be a number. By
-# default, this uses a float
-
+# default, this uses a float (think of a  float as a round rubber tube,
+# j.k. its actually how computers store real numbers instead of integers)
 # We can start by building an array with each element equal to 1
 # it will have 2 dimensions, the first of which is 3 and the second
 # of which is 4. Typically, this is thought of as 3 rows with 4 elements
@@ -94,7 +94,7 @@ except Exception as e:
 print('b + d')
 print(b + d)
 
-# BEWARE THE NUMPY BROADCAST. it can be helpful, but also leads to wierd bugs that are hard to track down
+# BEWARE THE NUMPY BROADCAST. it can be helpful, but also leads to weird bugs that are hard to track down
 
 # We can also tranform numpy arrays to lists, and vice versa
 
@@ -110,9 +110,8 @@ print(c)
 
 # BEWARE THE LIST/ARRAY CONFUSION. 
 
-#Multiplying a list by a number duplicates the list
-# it does NOT multiply every element. It is easy to get this mixed up if you transform
-# between these often.
+# Note the difference between the array times a number and list times a number.
+# It is easy to get this mixed up if you transform between these often.
 print('b*3')
 print(b*3)
 print('np.array((list b)*3)')
