@@ -81,6 +81,14 @@ To edit python files, here are some common programs:
             a lot of features to make development easy. There exists a python plugin called pyDev (as well as plugins for many other
             languages). See [python eclipse usage](https://www.ics.uci.edu/~pattis/common/handouts/introtopythonineclipse/), or ask your
             supervisor for help setting it up.
+* *Geany* - An open source ide, with native python support. Uses a fairly old graphics library, so runs on
+            pretty much anything. Also designed to have few dependencies and be lightweight. See the [Geany manual](http://www.geany.org/manual/current/index.html)
+* *pyCharm* - an ide designed specifically for python. There exists a free version available for download.
+              See [PyCharm docs & demos](https://www.jetbrains.com/pycharm/documentation/)
+* *Spyder* - an ide originally designed for python. Written in python. Open source, so free.
+             See the [Spyder github repo](https://github.com/spyder-ide/spyder)
+* This is *not* a complete list of text editors/IDE's that support python. Ask your supervisor if you have
+  a hankering for something else.
 
 ### Editing python code
 #### Interactive console
@@ -418,10 +426,10 @@ It is not exactly a basic plot, but should show you some of the power
 and finickyness of Matplotlib.
 
 Here are some references:
-[lambda expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
-[Matplotlib plotting functions](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
-[Matplotlib gridspec](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
-[Matplotlib backends](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend )
+* [lambda expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
+* [Matplotlib plotting functions](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+* [Matplotlib gridspec](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+* [Matplotlib backends](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend )
 
 ## One last thing
 When coding in python, it is easy to just buckle down and create a workable script.
@@ -440,10 +448,12 @@ There is no 1 definitive answer for what makes good code, but here are some tips
 * Readability (usually) trumps speed. 
 * Don't copy/paste large sections of code. If you are doing this, try thinking about how to
   turn it into a loop or a function instead.
-* Comment anything you do that is not immediately obvious when looking at the code.
-  This does not mean comment every line (usually - although there are times...),
-  but every 'paragraph' of code should have a short comment describing what is going on.
-  The right amount of comments is a mythical beast, but there _are_ wrong amounts of comments.
+* Comments
+   * Comment anything you do that is not immediately obvious when looking at the code.
+      This does not mean comment every line (usually - although there are times...),
+      but every 'paragraph' of code should have a short comment describing what is going on.
+   * Keep your comments succinct. They should not make the code harder to browse.
+   * The right amount of comments is a mythical beast, but there _are_ wrong amounts of comments.
 
 To help you write readable code, a good starting point is analyzing your code with [pylint](https://www.pylint.org/).
 To try it on the bisection.py code, navigate into the src/bisection/ directory, and run
@@ -456,10 +466,10 @@ its suggestions don't make sense - but usually its a good place to start improvi
 ## End of Tutorial
 This concludes the ARL:UT python tutorial.
 There are many references above, but here are the three that I find most useful:
-[official python tutorial](https://docs.python.org/3/tutorial/)
-[numpy documentation](http://docs.scipy.org/doc/numpy/)
-[Matplotlib plotting api](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
-And of course, [Google](https://www.google.com/).
+* [official python tutorial](https://docs.python.org/3/tutorial/)
+* [numpy documentation](http://docs.scipy.org/doc/numpy/)
+* [Matplotlib sample gallery](http://matplotlib.org/gallery.html)
+* And of course, [Google](https://www.google.com/).
 
 I also want to point out one more useful website when you have questions:
 [Stack Exchange](http://stackexchange.com/)
