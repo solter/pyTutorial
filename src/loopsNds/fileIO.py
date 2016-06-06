@@ -6,7 +6,7 @@ It needs the demo.txt file.
 
 See the https://docs.python.org/3/tutorial/inputoutput.html documentation
 for more details (but beware as it mostly focuses on file io WITHOUT
-a context manager, which is not usually a good idea unles you have to).
+a context manager, which is not usually a good idea unless you have to).
 """
 
 from pprint import pprint
@@ -33,11 +33,15 @@ print(fileTxt)
 # parsing it into a dictionary
 standings = {}
 with open('demo.txt','r') as f:
-    # read the header
+    # read the header line and advance to the next line
     f.readline()
+    # read the file line by line, starting after the first line due to the above advancement
     for line in f:
-        # split the line. defaults to splitting on whitespace
+        # split the line. The line is a string, and
+        # split will turn it into a list of strings.
+        # The list is the input string broken at each whitespace (by default), or user provided character set.
         name, win, loss = line.split()
+        # Store these in the standings dictionary
         standings[name] = {'w':int(win), 'l':int(loss)}
 
 pprint(standings)
@@ -46,7 +50,7 @@ pprint(standings)
 # We can write the standings variable into a file using the following three methods (among others)
 
 # custom format
-# open a file for writing
+# using the open(*,'w') opens the file for writing.
 with open('demo2.txt','w') as f:
     # write the header
     f.write('name  win  loss\n')
@@ -66,7 +70,7 @@ print('after json-ifying')
 print(st2)
 
 # using the pickle format
-# this is a binary format, so we have to open up a bytestream. hence the wb
+# this is a binary format, so we have to open up a bytestream. hence the 'wb' - implying write bytes
 import pickle
 with open('demo.pkl','wb') as f:
     pickle.dump(standings,f)
@@ -78,14 +82,16 @@ print(st3)
 
 ### NUMPY CONVENIENCE READER
 
-# Numpy also has a built in function to read in a structured text file,
-# See the http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html
-# documentation.
+# Numpy also has built in functions to read in a structured text file.
+# Here is one example:
 standings_np = np.genfromtxt('demo.txt', 
                              dtype=[('name','S10'),('w','i8'),('l','i8')], 
                              skip_header=1)
+                             
+# See the http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html documentation.
+# Other methods to accomplish the same thing include:
+#   http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.loadtxt.html - a simpler but less powerful function
+
 print(standings_np)
 print('names')
 print(standings_np['name'])
-
-
