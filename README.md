@@ -345,8 +345,7 @@ There is no 1 definitive answer for what makes good code, but here are some tips
 * Comment anything you do that is not immediately obvious when looking at the code.
   This does not mean comment every line (usually - although there are times...),
   but every 'paragraph' of code should have a short comment describing what is going on.
-  The right amount of comments is a mythical beast, but there are wrong amounts of comments.
-* Don't reinvent the wheel if you can avoid it.
+  The right amount of comments is a mythical beast, but there _are_ wrong amounts of comments.
 
 To help you write readable code, a good starting point is analyzing your code with [pylint](https://www.pylint.org/).
 To try it on the bisection.py code, navigate into the src/bisection/ directory, and run
