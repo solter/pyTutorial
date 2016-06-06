@@ -1,0 +1,6 @@
+name   win loss
+rangers 34 22
+mariners 31 25
+astros 28 30
+angels 26 30
+athletics 25 32
