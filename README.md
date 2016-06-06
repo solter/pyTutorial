@@ -262,7 +262,7 @@ This section should introduce you to the following:
 * Basic python data structures
    * Tuples and Lists
    * Dictionaries
-   * NumPy arrays [[Numpy documentation](http://docs.scipy.org/doc/numpy/), start with the User Guide's quickstart]
+   * NumPy arrays 
 * Control flow
    * if statements and boolean expressions
    * for loops (looping through a list)
