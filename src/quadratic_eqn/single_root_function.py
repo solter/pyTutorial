@@ -42,10 +42,10 @@ def root(a,b,c, positive=True):
         root = -b - disc
 
     root /= 2*a
-    # This tells python to return the root1 value when the positive_root function is called
+    # This tells python to return the root value when the root function is called
     return root
 
-def eval_quad(a,b,c,x):
+def evalQuad(a,b,c,x):
     """
     This function evaluates the quadratic equation
     a * x**2 + b*x + c
@@ -63,8 +63,8 @@ root1 = root(a,b,c)
 root2 = root(a,b,c,False)
 #root2 = root(a,b,c,positive=False)
 
-quad_at_root1 = eval_quad(a,b,c, root1)
-quad_at_root2 = eval_quad(a,b,c, root2)
+quad_at_root1 = evalQuad(a,b,c, root1)
+quad_at_root2 = evalQuad(a,b,c, root2)
 
 print( "The quadratic equation is:" )
 print( "{:f} * x^2 + {:f} x + {:f}".format(a,b,c) )
