@@ -272,6 +272,7 @@ except QuadException as qe:
 It is possible to catch all exceptions by specifying `except` or `except Exception as e`,
 but this is bad practice. For a more in-depth treatment of exceptions and 
 exception handling see [python exceptions](https://docs.python.org/3/tutorial/errors.html).
+*Go check out try...except blocks and the built in exceptions (esp. RuntimeExceptions).*
 
 ### Loops and Data Structures
 This section should introduce you to the following:
