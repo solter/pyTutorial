@@ -294,3 +294,81 @@ This example should introduce you to the following:
    * Matplotlib axes objects
    * Plotting lines
 
+For this section, navigate to the src/bisection/ directory.
+You will see 2 python files, both which you can run.
+
+The bisection_noplot.py file is the basic bisection algorithm.
+Open it up, and see if you cna figure out how it works.
+The big new things are the introduction of lambda functions, and passing functions to a function.
+The function passing behaves just like passing any other object (functions are objects in python).
+Lambda functions are another way of defining functions which only take 1 line and return.
+In this case it made defining the subtraction of functions passed in easy.
+
+Try to understand what all is happening, and why the algorithm works (look at the
+old_output.png for a visualization of the algorithm).
+
+The second file is bisection.py. It contains identical code to the noplot file,
+except contains a bunch of plot setup and generation.
+All the plotting logic is inside of `if plot:` statements, so should be easy
+to identify.
+
+Running this file produces the same output to screen, but also
+generates a new file (bisection.png). This should match the
+old_output.png file.
+
+It is not exactly a basic plot, but should show you some of the power
+and finickyness of matplotlib.
+
+Here are some references:
+[lambda expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
+[matplotlib plotting functions](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+[matplotlib gridspec](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+[matplotlib backends](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend )
+
+## One last thing
+When coding in python, it is easy to just buckle down and create a workable script.
+But as important as code that works, is well written code.
+Here are some reasons for writing good code:
+
+* So others (including your future self), can come back in 6 months and figure out what you were doing.
+* Poor code is MUCH harder to trace down bugs in. and there WILL be bugs - there are always bugs.
+* Well written code is easier to pull apart, so the most useful bits can be reused somewhere else by someone else.
+
+There is no 1 definitive answer for what makes good code, but here are some tips
+
+* Docstrings. They should be there.
+* Make your code readable. If it is a byzantine monstrosity, there's probably a better way.
+* Readability trumps cleverness. If you _can_ do it with a 1-liner, it doesn't mean you _should_.
+* Readability (usually) trumps speed. 
+* Don't copy/paste large sections of code. If you are doing this, try thinking about how to
+  turn it into a loop or a function instead.
+* Comment anything you do that is not immediately obvious when looking at the code.
+  This does not mean comment every line (usually - although there are times...),
+  but every 'paragraph' of code should have a short comment describing what is going on.
+  The right amount of comments is a mythical beast, but there are wrong amounts of comments.
+* Don't reinvent the wheel if you can avoid it.
+
+To help you write readable code, a good starting point is analyzing your code with [pylint](https://www.pylint.org/).
+To try it on the bisection.py code, navigate into the src/bisection/ directory, and run
+the command
+`pylint3 bisection.py`
+This gives you all sorts of recommendations on how to improve your code.
+It has a maximum score of 10, but no lower limit. It also should act as a guide, sometimes
+its suggestions don't make sense - but usually its a good place to start improving your code.
+
+## End of Tutorial
+This concludes the UT:ARL python tutorial.
+There are many references above, but here are the three that I find most useful:
+[official python tutorial](https://docs.python.org/3/tutorial/)
+[numpy documentation](http://docs.scipy.org/doc/numpy/)
+[matplotlib plotting api](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
+And of course, [Google](https://www.google.com/).
+
+I also want to point out one more useful website when you have questions:
+[Stack Exchange](http://stackexchange.com/)
+Typically this is where google ends up directing you (unless its matplotlib,
+then google as often as not points you to some wierd documentation page).
+
+There are many more packages for python which are useful, but those mentioned
+above will likely cover most of your use cases.
+
