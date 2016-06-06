@@ -15,6 +15,10 @@ See https://docs.python.org/3.4/library/stdtypes.html
 
 #### Tuples 
 
+# This is an empty tuple.
+# It is worthless and unloved, but you can define it if you want.
+a_empty_tuple = ()
+
 # This is a tuple
 a_tuple = (3, 4, 'hello')
 
@@ -74,6 +78,10 @@ except Exception as e:
     print(e.args)
 
 ### LISTS 
+
+# This is an empty list. Often you will see a list defined
+# as empty then filled up as a file is read in or a loop is executed.
+a_empty_list = []
 
 # A list is like a tuple, but can be modified
 a_list = [4, 5, 'hello']
