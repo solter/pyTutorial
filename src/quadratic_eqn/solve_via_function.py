@@ -13,7 +13,7 @@ c = 1.2
 # Following is a function.
 # Functions take inputs, and produce output(s).
 # They are defined using the following syntax:
-# def <function name>(<input 1>, <input 2>, ...)
+# def your_function_name(name_of_input_1, name_of_input_2, ...):
 #
 # They execute all the commands within the definition.
 # In python, definitions last for as long as the next command
@@ -32,30 +32,32 @@ c = 1.2
 # * this holds for functions and classes, but not if statements.
 #   see https://docs.python.org/3/tutorial/classes.html for the full
 #   set of scope rules
-def positive_root(a,b,c):
+def positiveRoot(a,b,c):
     """
-    This is a function docstring. It should immediatly follow
+    This is a function docstring. It should immediately follow
     the definition line.
 
     This function takes the coefficients of a quadratic equation and
     calculates the positive root.
     """
+    # The discriminant
     disc = np.sqrt(b**2 - 4*a*c)
     root1 = (-b + disc) / (2*a)
     # This tells python to return the root1 value when the positive_root function is called
     return root1
 
-def negative_root(a,b,c):
+def negativeRoot(a,b,c):
     """
     This function takes the coefficients of a quadratic equation and
     calculates the negative root.
     """
+    # The discriminant
     disc = np.sqrt(b**2 - 4*a*c)
     root2 = (-b - disc) / (2*a)
-    # This tells python to return the root1 value when the positive_root function is called
+    # This tells python to return the root2 value when the positive_root function is called
     return root2
 
-def eval_quad(a,b,c,x):
+def evalQuad(a,b,c,x):
     """
     This function evaluates the quadratic equation
     a * x**2 + b*x + c
@@ -64,15 +66,15 @@ def eval_quad(a,b,c,x):
 
 # This line calls eval quad, with x replaced by 
 # the output of the positive_root function
-quad_at_root1 = eval_quad(a,b,c, positive_root(a,b,c))
-quad_at_root2 = eval_quad(a,b,c, negative_root(a,b,c))
+quad_at_root1 = evalQuad(a,b,c, positive_root(a,b,c))
+quad_at_root2 = evalQuad(a,b,c, negative_root(a,b,c))
 
 print("The quadratic equation is:")
 print("{:f} * x^2 + {:f} x + {:f}".format(a,b,c))
 print("  = {:.2f} * x^2 + {:.2f} x + {:.2f}".format(a,b,c))# only printing 2 places after the decimal
 print()
-print("The positive root is {:f}".format(positive_root(a,b,c)))
+print("The positive root is {:f}".format(positiveRoot(a,b,c)))
 print("subsituting the positive root into the equation gives:\n  {:f}".format(quad_at_root1))
 print()
-print("The negative root is {:f}".format(negative_root(a,b,c)))
+print("The negative root is {:f}".format(negativeRoot(a,b,c)))
 print("subsituting the negative root into the equation gives:\n  {:f}".format(quad_at_root2))
