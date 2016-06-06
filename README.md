@@ -200,7 +200,7 @@ The output should be identical as before.
 Open up the source file and make sure you understand it.
 You should have a basic grasp on the following:
 * optional variables within python functions
-* if...elif...else statements
+* if statements
 
 To understand the quad_class.py module, we are going to explore it
 through the interpreter.
