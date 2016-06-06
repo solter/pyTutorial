@@ -105,11 +105,11 @@ Try running the following commands:
 ```
 This series of command should have done the following:
 
-1. printed the statement 'Hello world' to the screen
-2. defined a variable a, storing the numerical value 2016
-3. printed the value of a (2016) to the screen
-4. defined the variable b, storing the string 'My first formatted statement in'
-5. printed the statement 'My first formatted statement in 2016!'
+1. printed the statement `Hello world` to the screen
+2. defined a variable `a`, storing the numerical value `2016`
+3. printed the value of `a` (`2016`) to the screen
+4. defined the variable `b`, storing the string `'My first formatted statement in'`
+5. printed the statement `'My first formatted statement in 2016!'`
 
 Some quick notes:
 
@@ -388,7 +388,8 @@ Keys can be anything immutable, including numbers, strings and tuples.
 See the loops.py file for a more comprehensive description of Ifs and Loops.
 
 ##### If
-
+If statements allow you to execute a block of code only if certain conditions are met.
+For example:
 ```Python
 cond1 = True
 cond2 = False
@@ -398,7 +399,7 @@ if (cond1 and cond2) or cond3:
 ```
 indicates that if both cond1 and cond2 are true or if cond3 is true then print('the if block was true').
 
-The `if` statement has associated keywords `elif` (think else if) and `else` 
+The `if` statement has associated keywords `elif` (think else if) and `else`.
 
 ##### Loops
 
