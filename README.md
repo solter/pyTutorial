@@ -325,7 +325,7 @@ You can access the elements of tuple as follows:
 >>> print('{} {}'.format(a1, a2))
 >>> b1 = a_tuple[0]
 >>> b2 = a_tuple[1]
->>> print('{} {}'.format(a1, a2))
+>>> print('{} {}'.format(b1, b2))
 ```
 Note that the first element is accessed via the index 0,
 the second element by index 1, etc.
@@ -351,6 +351,7 @@ Here are some examples where we modify the list through concatenation and sortin
 >>> a_list = [19, 13, -5, 3, 14, -8]
 >>> print(a_list)
 >>> a_list[0] = 2
+>>> print(a_list)
 >>> a_list.append(3.1415)
 >>> print(a_list)
 >>> a_list += [20, -100, 12.5]
@@ -385,7 +386,7 @@ Here is some sample dictionary creation and access
 Keys can be anything immutable, including numbers, strings and tuples.
 
 #### Control Flow Statements
-See the loops.py file for a more comprehensive description of Ifs and Loops.
+See the loops.py file for a more comprehensive description of ifs and loops.
 
 ##### If
 If statements allow you to execute a block of code only if certain conditions are met.
@@ -397,9 +398,43 @@ cond3 = True
 if (cond1 and cond2) or cond3:
    print('the if block was true')
 ```
-indicates that if both cond1 and cond2 are true or if cond3 is true then print('the if block was true').
+indicates that if both `cond1` and `cond2` are true or if `cond3` is true then `print('the if block was true')`.
 
-The `if` statement has associated keywords `elif` (think else if) and `else`.
+The `if` statement has associated keywords `elif` (else if) and `else`.
+These statements are only executed if the above `if`/`elif` statements failed.
+For example:
+```Python
+>>> cond1 = True
+>>> cond2 = False
+>>> cond3 = True
+>>> if (cond1 and cond2) or cond3:
+...     print('the first if block was true')
+... elif not cond1 or cond2:
+...     print('second block was true')
+... else:
+...     print('neither statement above was true')
+...
+```
+In this example, the first if statement is the same as the previous example.
+If that statement is not `True`, then it checks the second statement.
+The second statement checks if `cond1` is false or if `cond2` is true, then print `second block was true`.
+If neither the if's condition nor the elif's condition were true, the else statement executes and will
+print `neither statement above was true`.
+
+Next is an example that looks similar to the last one, but is actually *COMPLETELY DIFFERENT*.
+```Python
+>>> if (cond1 and cond2) or cond3:
+...     print('the first if block was true')
+... if not cond1 or cond:
+...     print('second block was true')
+... else:
+...     print('neither statement above was true')
+...
+```
+The first if block executes just like before.
+But now the second if block is guaranteed to be checked, regardless of what happened with the
+first block. The else statement executes if the second condition was not true, regardless
+of the first statement.
 
 ##### Loops
 
