@@ -302,8 +302,79 @@ the guide. The following table describes the content and lists references for ea
 | fileIO        | file input/output                 | [[io tutorial](https://docs.python.org/3/tutorial/inputoutput.html), [numpy genfromtxt](http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html)]
 
 #### Tuples and Lists
+See the tuplesNlists.py file for a more comprehensive description of Tuples and Lists.
+
+##### Tuples
+Tuples are a series of data which cannot be modified after creation.
+Here is the creation of a tuple:
+```Python
+>>> a_tuple = (1,2,'hello',7,8,'goodbye')
+```
+Each element of the tuple can be an arbitrary object.
+You can access the elements of tuple as follows:
+```Python
+>>> a1, a2, a3, a4, a5, a6 = a_tuple
+>>> print('{} {}'.format(a1, a2))
+>>> b1 = a_tuple[0]
+>>> b2 = a_tuple[1]
+>>> print('{} {}'.format(a1, a2))
+```
+Note that the first element is accessed via the index 0,
+the second element by index 1, etc.
+
+You can also access multiple elements within a tuple using slicing.
+Try the following slices:
+```Python
+>>> seq_tuple = (1,2,3,4,5,6,7)
+>>> seq_tuple[2:5]
+>>> seq_tuple[:5]
+>>> seq_tuple[2:]
+>>> a_tuple[1:5:2]
+>>> a_tuple[1::2]
+```
+Note that slicing does NOT include the final index.
+
+##### Lists
+Lists are like tuples, but can be modified after creation.
+You can access the elements the same way as with tuples, slicing and all.
+
+Here are some examples where we modify the list through concatenation and sorting.
+```Python
+>>> a_list = [19, 13, -5, 3, 14, -8]
+>>> print(a_list)
+>>> a_list[0] = 2
+>>> a_list.append(3.1415)
+>>> print(a_list)
+>>> a_list += [20, -100, 12.5]
+>>> print(a_list)
+>>> a_list.sort()
+>>> print(a_list)
+```
+Note that the add equal (+=) assignment is defined as concatenating the right
+hand side to the original list. This only works with list, you cannot append using
+a += operator.
 
 #### Dictionaries
+See the dictionaries.py file for a more comprehensive demonstration of dictionaries.
+
+A dictionary is like a list, but uses keys rather than integer indices to access elements/values.
+Since the indices are not integers, slicing does NOT work with dictionaries.
+
+Here is some sample dictionary creation and access
+```Python
+>>> from pprint import pprint
+>>> a_empty_dict = {}
+>>> pprint(a_empty_dict)
+>>> a_empty_dict['key1'] = 'val1'
+>>> a_empty_dict['key3'] = 25
+>>> pprint(a_empty_dict)
+>>>
+>>> a_dict = {'key1':'val1', 'key3':25}
+>>> pprint(a_dict)
+>>> a_dict['dicKey'] = {1:'hi', 'deep key':'deep val'}
+>>> pprint(a_dict)
+```
+Keys can be anything immutable, including numbers, strings and tuples.
 
 #### Loops
 
