@@ -187,6 +187,14 @@ You should have a *basic* grasp on the following:
 * functions [[python functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)]
 * scope [[formal scope rules](https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces)]
 
+In python, sections of code are defined by the amount lines of code are indented.
+Thus after defining a function, all subsequent lines are part of that function as
+long as they have 1 more level of indentation than the function definition.
+Indentation blocks are also used for if statments, loops, try...except blocks, etc.
+Typically, indentation blocks are preceded by a line ending in a colon (:).
+
+At ARL:UT the standard is to use 4 spaces per level of indentation.
+
 Now execute the single_root_function.py script
 The output should be identical as before.
 Open up the source file and make sure you understand it.
