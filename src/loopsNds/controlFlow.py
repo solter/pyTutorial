@@ -154,6 +154,12 @@ for ele in a:
     print(ele)
 print(a)
 
+# we can also loop through a list, getting its value AND index using the enumerate function
+print('loop with indices')
+print(a)
+for idx, ele in enumerate(a):
+    print('idx: {:d}, ele: {}'.format(idx, ele))
+
 # to modify the value inside a, we can loop through its index range
 print('modifying a')
 print(a)

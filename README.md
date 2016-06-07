@@ -143,7 +143,7 @@ To run this file, use the following command in your terminal after saving this f
 ```Shell
 $ python3 test.py
 ```
-This does the same thing the interactive console does, except does NOT print a.
+This does the same thing the interactive console does, except does NOT print `a`.
 All print statements will write their output to the screen.
 
 > NOTE:
@@ -159,15 +159,13 @@ $ chmod +x test.py
 $ ./test.py
 ```
 
-```
-NOTE: The first line in the file,
-#!/usr/bin/env python3
-is a special type of comment that must go before any code (but can be after comments). 
-Lines beginning with `#!` are called a shebang, and the terminal 
-you are in reads this and knows to launch this file as a python3 script.
-(technically your shell is doing the heavy lifting. The terminal is just the screen
-interface to the shell. Google "bash shell" for a description of the standard shell) 
-```
+> NOTE: The first line in the file,
+> `#!/usr/bin/env python3`
+> is a special type of comment that must go before any code (but can be after comments). 
+> Lines beginning with `#!` are called a shebang, and the terminal 
+> you are in reads this and knows to launch this file as a python3 script.
+> (technically your shell is doing the heavy lifting. The terminal is just the screen
+> interface to the shell. Google "bash shell" for a description of the standard shell) 
 
 ### Roots of a quadratic equation
 This is a series of examples which should illustrate the following:
@@ -198,7 +196,7 @@ You should have a *basic* grasp on the following:
 In python, sections of code are defined by the amount lines of code are indented.
 Thus after defining a function, all subsequent lines are part of that function as
 long as they have 1 more level of indentation than the function definition.
-Indentation blocks are also used for if statments, loops, try...except blocks, etc.
+Indentation blocks are also used for if statments, loops, `try...except` blocks, etc.
 Typically, indentation blocks are preceded by a line ending in a colon (:).
 
 At ARL:UT the standard is to use 4 spaces per level of indentation.
@@ -305,7 +303,7 @@ the guide. The following table describes the content and lists references for ea
 | ---           | ---                               | ---        |
 | tuplesNlists  | tuples and lists                  | [standard types](https://docs.python.org/3.4/library/stdtypes.html)|
 | dictionaries  | dictionaries                      | [standard types](https://docs.python.org/3.4/library/stdtypes.html)|
-| loops         | control structures (ifs and loops)| [[control flow](https://docs.python.org/3/tutorial/controlflow.html), [boolean expr](https://docs.python.org/3/reference/expressions.html#bComparisons), [data structures](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)] |
+| controlFlow   | control structures (ifs and loops)| [[control flow](https://docs.python.org/3/tutorial/controlflow.html), [boolean expr](https://docs.python.org/3/reference/expressions.html#bComparisons), [data structures](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)] |
 | numpy_arr     | numpy arrays                      | [Numpy documentation](http://docs.scipy.org/doc/numpy/), start with the User Guide's quickstart |
 | fileIO        | file input/output                 | [[io tutorial](https://docs.python.org/3/tutorial/inputoutput.html), [numpy genfromtxt](http://docs.scipy.org/doc/numpy-1.10.0/reference/generated/numpy.genfromtxt.html)]
 
@@ -369,7 +367,7 @@ See the dictionaries.py file for a more comprehensive demonstration of dictionar
 A dictionary is like a list, but uses keys rather than integer indices to access elements/values.
 Since the indices are not integers, slicing does NOT work with dictionaries.
 
-Here is some sample dictionary creation and access
+Here is some sample dictionary creation and access calls:
 ```Python
 >>> from pprint import pprint
 >>> a_empty_dict = {}
@@ -386,7 +384,7 @@ Here is some sample dictionary creation and access
 Keys can be anything immutable, including numbers, strings and tuples.
 
 #### Control Flow Statements
-See the loops.py file for a more comprehensive description of ifs and loops.
+See the controlFlow.py file for a more comprehensive description of ifs and loops.
 
 ##### If
 If statements allow you to execute a block of code only if certain conditions are met.
@@ -417,8 +415,8 @@ For example:
 ```
 In this example, the first if statement is the same as the previous example.
 If that statement is not `True`, then it checks the second statement.
-The second statement checks if `cond1` is false or if `cond2` is true, then print `second block was true`.
-If neither the if's condition nor the elif's condition were true, the else statement executes and will
+The second statement checks if `cond1` is false or if `cond2` is true, then prints `second block was true`.
+If neither the `if`'s condition nor the `elif`'s condition were true, the else statement executes and will
 print `neither statement above was true`.
 
 Next is an example that looks similar to the last one, but is actually *COMPLETELY DIFFERENT*.
@@ -437,6 +435,90 @@ first block. The else statement executes if the second condition was not true, r
 of the first statement.
 
 ##### Loops
+
+Python supports 3 types of loops:
+1. `while` loops
+2. `for` loops
+3. list comprehensions
+
+`while` loops function like an if statement, but the code block is
+repeated until the condition becomes false. For example:
+```Python
+>>> i = 1
+>>> while (i < 10):
+...     i *= 2
+...     print(i)
+...
+>>> print(i)
+```
+Note that `i` preserves its value upon exit of the while loop.
+Any boolean expression that works in an if statement can be used in a `while` loop.
+
+`for` loops cycle through each element in a list, tuple or `range`.
+`range` is like a special type of list, that takes 1, 2, or 3 arguments.
+Try out the following:
+```Python
+>>> for i in range(10):
+...     print(i)
+...
+>>> for i in range(2,10):
+...     print(i)
+...
+>>> for i in range(2,10,3):
+...     print(i)
+...
+```
+Essentially, the arguments to `range` are analogous to specifying slicing in lists.
+
+Cycling through a list or tuple is similarly easy:
+```Python
+>>> a_list = ['hello', 'there', 'george','the', 3]
+>>> for ele in a_list:
+...     print(ele)
+...
+```
+
+Note that we can perform operations on the loop index, but it will NOT be changed in the
+original list.
+```Python
+>>> a_list = [1,2,3,5,7,11]
+>>> for ele in a_list:
+...     ele = ele**2
+...     print(ele)
+...
+>>> print(a_list)
+```
+There also exist 3 methods to allow looping through a dictionary.
+They are `<dict_name>.keys()`, `<dict_name>.values()`, and `<dict_name>.items` that work as follows:
+```Python
+>>> a_dict = {1:'a', 'b':2, 3:'c', 'd':4, 7.2:8.9}
+>>> for key in a_dict.keys():
+...     print(key)
+...
+>>> for val in a_dict.values():
+...     print(val)
+...
+>>> for key, val in a_dict.items():
+...     print('key = {}, val = {}'.format(key, val))
+...
+```
+Similar to lists, modifying the loop indices does NOT modify the dictionary.
+
+The last type of loop is called a list comprehension.
+This allows you to build a list using a for loop, without the multiple lines a for loop requires.
+Here are 2 in action:
+```Python
+>>> squares_list = [x**2 for x in range(10)]
+>>> print(squares_list)
+>>> evens_list = [y for y in range(10) if y%2 == 0]
+>>> print(evens_list)
+```
+The `squares_list` cycles through every value of `x` in `range(10)`, and saves it to an element in the list.
+The `evens_list` cycles through ever value of `y` in `range(10), and saves it to an element in the list
+if `y%2 == 0`. The `%` is a remainder operator, so `y%2` is the remainder of `y` divided by 2.
+
+> NOTE: in C and java `%` is the modulus operator, which gives you the remainder but only for integers.
+> In python by contrast, the number to the left *and/or* the right of `%` can be any number.
 
 #### Numpy arrays
 
