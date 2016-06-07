@@ -217,10 +217,19 @@ def intersect(f, g, x0, tol=.001, plot=False):
     # .5*(bnd[1] + bnd[0])
     return .5*sum(bnd)
 
-if __name__ == '__main__':
+def testTanExp():
+    """
+    This tests the bisection method using
+    the tangent and 1.2**x as functions.
+
+    The result is printed to the screen.
+    """
     f = np.tan
     g = lambda x: 1.2**x
     x = intersect(f, g, .73, plot=True)
     delta = lambda x: f(x) - g(x)
     print('intersection = {:f}\nf(x) - g(x) = {:f}'.format(x, delta(x)))
     print('delta(x+tol) = {}, delta(x-tol) = {}'.format(delta(x+.01), delta(x-.01)))
+
+if __name__ == '__main__':
+    testTanExp()

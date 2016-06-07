@@ -127,11 +127,12 @@ class QuadException(Exception):
     def __str__(self):
         return repr(self.msg)
 
-# When a python script is called, python gives it
-# a __name__ of __main__. By adding this if block,
-# python only bothers to execute IF it is called
-# directly from the command line
-if __name__ == '__main__':
+def testStandardQuad():
+    """
+    This function tests the quadratic_Equation class
+    by building an instance, evaluating roots,
+    and printing output.
+    """
     q1 = quadratic_Equation(2.1, 5.4, 1.2)
 
     print(q1)# print the string representation of q1
@@ -162,3 +163,12 @@ if __name__ == '__main__':
     # But now only imaginary roots exist, so the following
     # will throw the exception
     q1.root()
+
+# When a python script is called, python gives it
+# a __name__ of __main__. By adding this if block,
+# python only bothers to execute IF it is called
+# directly from the command line.
+# To avoid module level variables, define the method
+# separately to actually do the action.
+if __name__ == '__main__':
+    testStandardQuad()
