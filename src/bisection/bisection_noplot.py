@@ -12,6 +12,17 @@ http://matplotlib.org/users/gridspec.html
 for the gridspec examples, and see
 http://matplotlib.org/1.4.3/api/pyplot_summary.html
 for a list of all the plotting functions
+
+This utilizes lambda functions.
+Lambda functions are special functions which are defined inline rather
+by thier own code block. They are specified as
+lambda <variable list> : <expression to return>,
+which can be assigned to a variable which will now act as:
+
+def <variable>(<variable list>):
+    return <expression to return>
+
+Seee line 53
 """
 
 import numpy as np
@@ -37,9 +48,12 @@ def intersect(f, g, x0, tol=.001, plot=False):
             step or not. If true, produces plots
     """
 
-    # Define a new function named delta
-    # This will output the difference f(x) - g(x)
+    # Define a new function named delta.
+    # This will output the difference f(x) - g(x).
     delta = lambda x: f(x) - g(x)
+    # This is equivalent to the following definition
+    #def delta(x):
+    #   return f(x) - g(x)
 
     # if delta(x0 - .5*tol) is on the opposite side of the intersection
     # as delta(x0 + .5*tol), the intersection MUST fall between x0-.5*tol
