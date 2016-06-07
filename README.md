@@ -726,10 +726,12 @@ These can then be read in using:
 ### Bisection root-finding method
 This example should introduce you to the following:
 * Bisection method
-* Matplotlib [[Matplotlib api](http://matplotlib.org/1.4.3/api/index.html), [Matplotlib command summary](http://matplotlib.org/1.4.3/api/pyplot_summary.html)]
+* lambda functions
+* Matplotlib 
    * Labeling your plots
    * Matplotlib axes objects
    * Plotting multiple axes on 1 figure 
+   * Saving plots and using a backend with no display non-visual
 
 For this section, navigate to the src/bisection/ directory.
 You will see 2 python files, both which you can run.
@@ -761,6 +763,7 @@ Here are some references:
 * [Matplotlib plotting functions](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
 * [Matplotlib gridspec](http://matplotlib.org/1.4.3/api/pyplot_summary.html)
 * [Matplotlib backends](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend )
+* [Matplotlib sample gallery](http://matplotlib.org/gallery.html)
 
 ## One last thing
 When coding in python, it is easy to just buckle down and create a workable script.
