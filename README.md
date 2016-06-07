@@ -723,6 +723,75 @@ These can then be read in using:
 >>> print(out_pickle)
 ```
 
+### Basic plotting
+This example should introduce you to the following:
+* Basic plotting routines
+* Labeling your plots
+* Adding legends to your plots
+
+You will need to be in the src/quadratic_eqn/ directory to run this.
+
+There are 3 plotting routines we are going to use:
+* `plot_roots.simplePlot` - a simple routine which plots a quadratic equation
+* `plot_roots.plotQE` - a plotting routine which plots a quadratic equation and allows the user
+   to modify the y limits of the plot
+* `plot_roots.plotRoots` - a plotting routine which plots a quadratic equation as well as placing
+   vertical bars at its roots.
+
+To set up your environment for these plots, enter the following into the python console:
+```Python
+>>> from quad_class import quadratic_Equation as QE
+>>> import plot_roots as pr
+>>> myeqn = QE(.8, 3, -2)
+```
+
+The plotting routines dump all plots to the screen - this will stop you from entering
+new python command until you close it. (See the Bisection root-finding method section
+for an example which saves the plot to a png.)
+
+To generate the simple plot, run the following:
+```Python
+>>> pr.simplePlot(myeqn, [-5, 3])
+```
+This will show a plot of the quadratic equation going from -5 to 3 on the x-axis.
+The magic that makes this happen are the following lines:
+```Python
+x_vals = np.arange(xlim[0], xlim[1], .01) #go from xlim[0] to xlim[1] in step sizes of .01
+y_vals = [quadEqn(x) for x in x_vals]
+plt.plot(x_vals, y_vals)
+plt.show()
+```
+You just need to define a list of x-values, a list of y-values, then call `plt.plot` on them (`plt` was imported
+from Matplotlib).
+The `plt.show()` function displays it to the screen.
+
+The `plotQE` function is invoked similarly
+```Python
+>>> pr.plotQE(myeqn, [-5,3])
+>>> pr.plotQE(myeqn, [-5, 3], [-5, 5])
+```
+The second invocation specifies what limits you want to impose on the y-axis.
+Matplotlib is okay at choosing limits for your axis, but the end user can
+often do a better job manually.
+
+Limiting the ranges plotted is as easy as invoking the functions
+```Python
+plt.xlim([<min_x>, <max_x>])
+plt.ylim([<min_y>, <max_y>])
+```
+Note that this plot also has labeled the x and y axis appropriately.
+Please see the file for the complete list of commands used.
+
+The final routine can be invoked via
+```Python
+>>> pr.plotRoots(myeqn)
+```
+This routine intelligently chooses the x-limits and y-limits
+to show the function's roots. It also plots vertical lines at the roots,
+adds a legend, and a plot title.
+
+Please see the file for the complete list of commands used.
+
 ### Bisection root-finding method
 This example should introduce you to the following:
 * Bisection method

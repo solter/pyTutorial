@@ -129,7 +129,7 @@ def plotRoots(quadEqn, xlim=None, ylim=None):
         pad = pos_root - neg_root
         pad *= .1
 
-        xlim = [neg_root - pad, pos_root + pad]
+        xlim = [min(neg_root, pos_root) - pad, max(neg_root, pos_root) + pad]
 
     # Define the x values to plot
     x_vals = np.arange(xlim[0], xlim[1], .01) #go from xlim[0] to xlim[1] in step sizes of .01
