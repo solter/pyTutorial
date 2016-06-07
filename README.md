@@ -746,8 +746,10 @@ To set up your environment for these plots, enter the following into the python 
 ```
 
 The plotting routines dump all plots to the screen - this will stop you from entering
-new python command until you close it. (See the Bisection root-finding method section
-for an example which saves the plot to a png.)
+new python command until you close it. 
+To save it as a png instead, replace the command `plt.show()` with the command `plt.savefig('myname.png')`.
+There are a variety of image formats that Matplotlib is capable of saving to,
+depending on the extension you provide it.
 
 To generate the simple plot, run the following:
 ```Python
