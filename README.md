@@ -514,25 +514,192 @@ Here are 2 in action:
 >>> print(evens_list)
 ```
 The `squares_list` cycles through every value of `x` in `range(10)`, and saves it to an element in the list.
-The `evens_list` cycles through ever value of `y` in `range(10), and saves it to an element in the list
+The `evens_list` cycles through every value of `y` in `range(10)`, and saves it to an element in the list 
 if `y%2 == 0`. The `%` is a remainder operator, so `y%2` is the remainder of `y` divided by 2.
 
 > NOTE: in C and java `%` is the modulus operator, which gives you the remainder but only for integers.
 > In python by contrast, the number to the left *and/or* the right of `%` can be any number.
 
 #### Numpy arrays
+See the numpy_arr.py file for a more comprehensive description of Numpy arrays
+
+Numpy stands for NUMerical PYthon, and is one of the most widely used packages for python
+within the scientific community.
+It contains many methods for performing numerical computations, as well as other helper functions.
+But at the core of Numpy lies the Numpy.array data structure.
+
+Numpy arrays have the following properties:
+* a fixed size (or shape), which cannot be modified without redefining the variable
+* every index within the shape holds a number
+* every number within an array is of the same type (by default, a float.)
+* arithmetic operations applied to Numpy.array objects apply element-wise
+
+> In computers, numbers come in different types.
+> Python supports ints, floats (similar to a real number), and complex.
+> In Numpy, each type (int, float and complex) has subtypes corresponding
+> to how much space they take up in memory. For example, a `i8` (integer 8) is twice as large
+> as an `i4` (integer 4). The advantage of `i8` is that it can take many more values than `i4`,
+> as less memory means less unique integers can be represented by `i4`.
+> The vast majority of the time in python and Numpy, the default of float is just fine.
+> See [wikipedia: floating point](https://en.wikipedia.org/wiki/Floating_point) for a wider discussion
+> on floating point numbers.
+
+Define the arrays `a` and `b` as follows:
+```Python
+>>> import numpy as np
+>>> a = np.ones((3,4))
+>>> print(a)
+>>> b = np.zeros((3,4))
+>>> print(b)
+>>> for i in range(b.shape[0]):
+...     for j in range(b.shape[1]):
+...         b[i,j] = i*j
+...
+>>> print(b)
+```
+Some important thing's to note:
+* Conventionally, Numpy is imported and renamed np to make code shorter and easier to read
+* Numpy has many methods for defining arrays, we are using `np.ones` and `np.zeros` to define arrays filled
+  with ones and zeros respectively
+* Numpy arrays have an attribute `shape`. This is a tuple describing the size of the array
+* For arrays with multiple dimensions, we can access the dimensions using 2 mechanisms - a list like access
+  of `b[i][j]`, or an array like access used above (`b[i,j]`)
+
+> NOTE: for 2 dimensional arrays, convention dictates that we consider the first index the row number,
+> and the second index the column number. This arises from how matrices work in mathematics.
+> Thus b[2,1] is the 3rd row, 2nd column of b (recall that the first row and column have indices of 0).
+
+Since `a` and `b` have the same shape, we can use them both to perform arithmetic operations.
+Each operation happens element-wise. Here are some examples:
+```Python
+>>> print(a)
+>>> print(b)
+>>> print(b**2)
+>>> print(a + b)
+>>> print(a*b)
+>>> print(3*b - 2*a + 1)
+```
+
+The Numpy functions are nearly all defined to take an array in and apply the operation element-wise.
+Some simple examples are:
+```Python
+>>> print(np.sqrt(b))
+>>> print( np.rad2deg( np.arctan(b) ) )
+```
+
+If Numpy arrays do NOT have the same shape, but have the same dimension, they are incompatible and cannot be
+used in the same expression. For example:
+```Python
+>>> print(a.shape)
+>>> a = a.transpose()
+>>> print(a.shape)
+>>> print(a + b)
+```
+The last line will throw an exception because the shapes are different.
+
+Numpy provides ways to transform lists of numbers into array, as follows:
+```Python
+>>> c = np.array([0, 1, 2])
+>>> print(c)
+>>> d = np.array(list(range(4)))
+>>> print(d)
+```
+> *WARNING*: Be careful mixing lists and arrays. Lists have no fixed shape, and are not required
+> to hold only numbers. Whereas arrays have a fixed shape at creation and must hold only numbers.
+
+If you try to use arrays of different dimensions (`len(c.shape) != len(d.shape)`), Numpy will
+try to broadcast the small dimension into the larger dimension. 
+See [broadcasting rules](http://docs.scipy.org/doc/numpy-1.10.1/user/basics.broadcasting.html) for
+a thorough description of how Numpy broadcasts arrays. Try the following:
+```Python
+>>> print(b.shape)
+>>> print(c.shape)
+>>> print(d.shape)
+>>> print(b + c)
+>>> print(b + d)
+```
+Note that Numpy successfully broadcast `d`, but not `c`.
+
+> Note: Broadcasting can be very useful. It can also cause bugs that are hard to track down.
+> These usually arise when Numpy broadcasts something so allows an operation you didn't think
+> should work - and that you didn't intend to work.
+
+One last thing, you can transform arrays to lists using the following command
+```Python
+>>> b_list = b.tolist()
+```
+> *WARNING - AGAIN*: Be careful mixing lists and arrays. Lists have no fixed shape, and are not required
+> to hold only numbers. Whereas arrays have a fixed shape at creation and must hold only numbers.
 
 #### File Input/Output
+See the fileIO.py file for a more comprehensive description of fileIO.
 
+For this set of examples, make sure you are inside the src/loopsNds directory for access to the demo.txt file.
+
+There are 2 primary ways to read and write files in python
+1. Modules that provide functions that handle all the input/output.
+   We will look at one such function Numpy provides.
+2. Context managers. These allow you to directly access files yourself.
+
+If a Module function is provided, it is often the easiest way.
+Here is an example using `np.genfromtxt`:
+```Python
+>>> import numpy as np
+>>> standings = np.genfromtxt('demo.txt',
+...                           dtype=[('name','S10'), ('w','i8'), ('l','i8')],
+...                           skip_header=1)
+>>> print(standings)
+```
+`np.genfromtxt` is provided 3 arguments in this example
+1. filename
+2. what type of data each column is, as well as a name for that column
+3. the number of header lines it should skip
+
+If a standard file format is expected, and a function is available from a module,
+that is usually the easiest way to read and write to files.
+
+If you are stuck reading and writing the file manually, then you need to open the file
+with the context manager, using the following command
+```Python
+>>> with open(filename, what_to_do) as f:
+...     # do stuff 
+...
+>>>
+```
+The `filename` should be a string specifying the filename.
+The `what_to_do` is a 1 or 2 character code telling python what you want to do with
+the file. Here are the most common:
+* `"r"` - read from a text file
+* `"w"` - write to a text file
+* `"rb"` - read from a binary file
+* `"wb"` - write to a binary file
+Once the file is opened, within the indent block `f` represents your file (`f` is
+a variable, so you can name it whatever you want).
+One of the nifty things about file object like `f`, is that you can loop through them
+like a list, and each iteration interprets a line.
+
+Here is an example where we read the demo.txt file, and write it back out into demo2.txt
+```Python
+>>> file_lines = []
+>>> with open('demo.txt','r') as f:
+...     for line in f:
+...         file_lines.append(line)
+...
+>>> print(file_lines)
+>>> with open('demo2.txt','w') as f:
+...     for line in file_lines:
+...         f.write(line)
+...
+```
+Open up demo2.txt, and it should be identical to demo.txt
 
 ### Bisection root-finding method
 This example should introduce you to the following:
 * Bisection method
 * Matplotlib [[Matplotlib api](http://matplotlib.org/1.4.3/api/index.html), [Matplotlib command summary](http://matplotlib.org/1.4.3/api/pyplot_summary.html)]
-   * Plotting basic data
    * Labeling your plots
    * Matplotlib axes objects
-   * Plotting lines
+   * Plotting multiple axes on 1 figure 
 
 For this section, navigate to the src/bisection/ directory.
 You will see 2 python files, both which you can run.
@@ -557,7 +724,7 @@ generates a new file (bisection.png). This should match the
 old_output.png file.
 
 It is not exactly a basic plot, but should show you some of the power
-and finickyness of Matplotlib.
+and finickiness of Matplotlib.
 
 Here are some references:
 * [lambda expressions](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
