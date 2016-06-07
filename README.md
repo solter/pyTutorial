@@ -693,6 +693,36 @@ Here is an example where we read the demo.txt file, and write it back out into d
 ```
 Open up demo2.txt, and it should be identical to demo.txt
 
+There are two common data formats to store data from python,
+JSON and pickle. JSON is a plain text format, but can only store
+standard python types - not Numpy types or any custom objects.
+Pickle files are binary files, and can store any arbitrary data from python.
+
+We can write the previously read in file to JSON and pickle files as follows:
+```Python
+>>> import json
+>>> import pickle
+>>> with open('data.json','w') as f:
+...     json.dump(file_lines, f, indent=2)
+...
+>>> with open('data.pkl','wb') as f:
+...     pickle.dump(file_lines, f)
+...
+```
+The `indent=2` option for JSON is optional, but makes reading the JSON file itself
+much easier.
+These can then be read in using:
+```Python
+>>> with open('data.json','r') as f:
+...     out_json = json.load(f)
+...
+>>> print(out_json)
+>>> with open('data.pkl','rb') as f:
+...     out_pkl = pickle.load(f)
+...
+>>> print(out_pickle)
+```
+
 ### Bisection root-finding method
 This example should introduce you to the following:
 * Bisection method
