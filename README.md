@@ -216,7 +216,7 @@ Open up the interpreter and enter the following command:
 ```
 This imports the module quad_class (note that this is the filename without the .py extension),
 and names it qc for future use.
-Try reading the docstrings for the module and quadrateic_Equation class by using the built in
+Try reading the docstrings for the module and quadratic_Equation class by using the built in
 help command:
 ```Python
 >>> help(qc)
@@ -283,14 +283,14 @@ exception handling see [python exceptions](https://docs.python.org/3/tutorial/er
 ### Loops and Data Structures
 This section should introduce you to the following:
 * Basic python data structures
-   * Tuples and Lists
+   * Tuples and lists
    * Dictionaries
    * NumPy arrays 
 * Control flow
-   * if statements and boolean expressions
-   * for loops (looping through a list)
-   * while loops (looping until a condition is met)
-* Reading and Writing to files
+   * If statements and boolean expressions
+   * For loops (looping through a list)
+   * While loops (looping until a condition is met)
+* Reading and writing to files
    * Using basic python IO functions
    * Using standard file types json and pickles
    * Using NumPy text reader
