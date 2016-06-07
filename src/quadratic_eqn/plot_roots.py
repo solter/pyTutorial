@@ -82,8 +82,8 @@ def plotQE(quadEqn, xlim, ylim=None):
     # Define the y values to plot.
     y_vals = [quadEqn(x) for x in x_vals]
    
-    # Plot the function, but make it red with a solid line
-    plt.plot(x_vals, y_vals, 'r-')
+    # Plot the function, but make it red, and only plot the actual data points without a line
+    plt.plot(x_vals, y_vals, 'r*')
 
     # Set the plot so it only shows the defined x range
     plt.xlim(xlim)
