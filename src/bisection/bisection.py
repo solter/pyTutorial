@@ -51,7 +51,7 @@ def intersect(f, g, x0, tol=.001, plot=False):
         mygrid = gs.GridSpec(2, 2)
 
         # define an axis in bottom left corner to hold the function plot
-        funplot = plt.subplot(mygrid[1, 0])
+        funcplot = plt.subplot(mygrid[1, 0])
         # define an axis in bottom right corner to hold the delta plot
         dplot = plt.subplot(mygrid[1, 1])
         # define an axis spanning the entire top to hold to algorithm plot
@@ -71,23 +71,24 @@ def intersect(f, g, x0, tol=.001, plot=False):
         g_vals = [g(x) for x in x_vals]
         delta_vals = [delta(x) for x in x_vals]
 
-        ## plot the f and g functions on the funplot
+        ## plot the f and g functions on the funcplot
 
         # make the f function green, with a solid line, and a figure legend f(x)
-        funplot.plot(x_vals, f_vals, 'g-', label='f(x)')
+        funcplot.plot(x_vals, f_vals, 'g-', label='f(x)')
 
         # make the g function red, with a solid line, and a figure legend g(x),
         # over the top of the f_plot
-        funplot.plot(x_vals, f_vals, 'r-', label='g(x)')
+        funcplot.plot(x_vals, g_vals, 'r-', label='g(x)')
 
         # Define the axes labels
-        funplot.set_xlabel('x')
-        funplot.set_ylabel('y')
+        funcplot.set_xlabel('x')
+        funcplot.set_ylabel('y')
         # Define the horizontal and vertical limits
-        funplot.set_xlim([x0-.5, x0+.5])
+        funcplot.set_xlim([x0-.5, x0+.5])
+        funcplot.set_ylim([-2, 2])
         # Create the grid
-        funplot.grid(True, which='major', linestyle='-', color='darkgrey')
-        funplot.axhline(0, linestyle='-', color='k')
+        funcplot.grid(True, which='major', linestyle='-', color='darkgrey')
+        funcplot.axhline(0, linestyle='-', color='k')
 
         ## plot the delta function on the deltaplot, along with the initial guess
 
@@ -128,7 +129,7 @@ def intersect(f, g, x0, tol=.001, plot=False):
         # finalize the plots by adding legends, and saving the figure
         if plot:
             # Add legends. Only plots with labels will be added to the legend.
-            funplot.legend()
+            funcplot.legend()
             alplot.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=3, mode='expand')
             plt.savefig('bisection.png')
 
@@ -183,7 +184,7 @@ def intersect(f, g, x0, tol=.001, plot=False):
             # finalize the plots by adding legends, and saving the figure
             if plot:
                 # Add legends. Only plots with labels will be added to the legend.
-                funplot.legend()
+                funcplot.legend()
                 alplot.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=3, mode='expand')
                 plt.savefig('bisection.png')
             # if we hit the the intersection exactly, return it.
@@ -208,7 +209,7 @@ def intersect(f, g, x0, tol=.001, plot=False):
     # finalize the plots by adding legends, and saving the figure
     if plot:
         # Add legends. Only plots with labels will be added to the legend.
-        funplot.legend()
+        funcplot.legend()
         alplot.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=3, mode='expand')
         plt.savefig('bisection.png')
     # At this point, we know that bnd[1] and bnd[0] lie on opposite sides of the intersection
