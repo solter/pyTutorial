@@ -1,4 +1,4 @@
-# pyTutorial
+the second statement was not true# pyTutorial
 Python tutorial for incoming summer students at ARL:UT 2016
 
 ## Basic command line navigation
@@ -426,7 +426,7 @@ Next is an example that looks similar to the last one, but is actually *COMPLETE
 ... if not cond1 or cond:
 ...     print('second block was true')
 ... else:
-...     print('neither statement above was true')
+...     print('the second statement was not true')
 ...
 ```
 The first if block executes just like before.
